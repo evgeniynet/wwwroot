@@ -1,0 +1,24 @@
+SherpaDesk website Version #2
+page instructions 
+latest update Aug 22, 2014 
+------------------------------
+
+- Custom Page Header Image 
+	paste the following css class into the style.css document in the site wordpress directory (change ClassName for page class name i.e. pageTitleCareers). In the wordpress wp-admin panel in the page add new section, in the custom feild labeled "sherpa-header-title" enter the ClassName entered in the css
+	
+		.pageTitleClassName {
+		   background: url(mtt.jpg) no-repeat center center;
+		   -webkit-background-size: cover;
+		   -moz-background-size: cover;
+		   -o-background-size: cover;
+		   background-size: cover;
+		   width: 100%;
+		   height: 500px;
+		}  
+
+
+- Default Page Header Image 
+	If no class is specified in the "sherpa-header-class" the default image will be applied to the page 
+
+- Front-page 
+	Is the page the serves as the index.html (homepage)

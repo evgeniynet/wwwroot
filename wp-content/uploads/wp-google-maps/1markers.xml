@@ -1,0 +1,291 @@
+<?xml version="1.0"?>
+<markers>
+  <marker>
+    <marker_id>1</marker_id>
+    <map_id>1</map_id>
+    <title>SherpaDesk</title>
+    <address>3423 Piedmont Road, NE Atlanta, GA 30305</address>
+    <desc>The Home of SherpaDesk</desc>
+    <pic>http://sherpadesk.com/sd/wp-content/uploads/2014/01/tem.png</pic>
+    <icon>http://sherpadesk.com/wp-content/uploads/2014/08/error-background.png</icon>
+    <linkd>http://www.sherpadesk.com</linkd>
+    <lat>33.848688</lat>
+    <lng>-84.37332900000001</lng>
+    <anim>2</anim>
+    <retina>0</retina>
+    <category>0</category>
+    <infoopen>0</infoopen>
+  </marker>
+  <marker>
+    <marker_id>11</marker_id>
+    <map_id>1</map_id>
+    <title>Jamerson</title>
+    <address>Opelika, AL</address>
+    <desc>I was about ready to give up and settle on one of the not-quite-right systems when I found the SherpaDesk website.  ...   It didn't take long to see the potential for it to be perfect for us.</desc>
+    <pic>http://sherpadesk.com/sd/wp-content/uploads/2014/01/jamerson.jpg</pic>
+    <icon>http://sherpadesk.com/wp-content/uploads/2014/08/error-background.png</icon>
+    <linkd>http://www.jamersan.com/blog/sherpadesk.html</linkd>
+    <lat>32.6454116</lat>
+    <lng>-85.37827950000002</lng>
+    <anim>2</anim>
+    <retina>0</retina>
+    <category>0</category>
+    <infoopen>0</infoopen>
+  </marker>
+  <marker>
+    <marker_id>21</marker_id>
+    <map_id>1</map_id>
+    <title>Christenson Communties</title>
+    <address>Alberta, Canada</address>
+    <desc>Patrick Pachal</desc>
+    <pic>http://sherpadesk.com/sd/wp-content/uploads/2014/01/Christenson.jpg</pic>
+    <icon>http://sherpadesk.com/wp-content/uploads/2014/08/error-background.png</icon>
+    <linkd>http://www.christensoncommunities.com/</linkd>
+    <lat>53.9332706</lat>
+    <lng>-116.5765035</lng>
+    <anim>2</anim>
+    <retina>0</retina>
+    <category>0</category>
+    <infoopen>0</infoopen>
+  </marker>
+  <marker>
+    <marker_id>31</marker_id>
+    <map_id>1</map_id>
+    <title>Riwal</title>
+    <address>Maxwellstraat 27 3316 GP Dordrecht Nederland</address>
+    <desc>Richard Swart</desc>
+    <pic>http://sherpadesk.com/sd/wp-content/uploads/2014/01/Riwal_The-Netherlands.jpg</pic>
+    <icon>http://sherpadesk.com/wp-content/uploads/2014/08/error-background.png</icon>
+    <linkd></linkd>
+    <lat>51.7819656</lat>
+    <lng>4.636878499999966</lng>
+    <anim>2</anim>
+    <retina>0</retina>
+    <category>0</category>
+    <infoopen>0</infoopen>
+  </marker>
+  <marker>
+    <marker_id>41</marker_id>
+    <map_id>1</map_id>
+    <title>Stratasan</title>
+    <address>Nashville, TN</address>
+    <desc></desc>
+    <pic>http://sherpadesk.com/sd/wp-content/uploads/2014/01/Strassan.jpg</pic>
+    <icon>http://sherpadesk.com/wp-content/uploads/2014/08/error-background.png</icon>
+    <linkd></linkd>
+    <lat>36.166667</lat>
+    <lng>-86.78333299999997</lng>
+    <anim>2</anim>
+    <retina>0</retina>
+    <category>0</category>
+    <infoopen>0</infoopen>
+  </marker>
+  <marker>
+    <marker_id>51</marker_id>
+    <map_id>1</map_id>
+    <title></title>
+    <address>Payette, ID</address>
+    <desc>Chris Gamble IES</desc>
+    <pic>http://sherpadesk.com/sd/wp-content/uploads/2014/01/chris-g.jpg</pic>
+    <icon>http://sherpadesk.com/wp-content/uploads/2014/08/error-background.png</icon>
+    <linkd></linkd>
+    <lat>44.0782195</lat>
+    <lng>-116.9337711</lng>
+    <anim>2</anim>
+    <retina>0</retina>
+    <category>0</category>
+    <infoopen>0</infoopen>
+  </marker>
+  <marker>
+    <marker_id>61</marker_id>
+    <map_id>1</map_id>
+    <title>AmeriPark</title>
+    <address>3200 Cobb Galleria Parkway  Atlanta, GA 30339</address>
+    <desc>AmeriPark Loves SherpaDesk!!</desc>
+    <pic>http://sherpadesk.com/sd/wp-content/uploads/2014/02/AmeriPark.png</pic>
+    <icon>http://sherpadesk.com/wp-content/uploads/2014/08/error-background.png</icon>
+    <linkd>http://ameripark.com/</linkd>
+    <lat>33.881246</lat>
+    <lng>-84.45607189999998</lng>
+    <anim>2</anim>
+    <retina>0</retina>
+    <category>0</category>
+    <infoopen>0</infoopen>
+  </marker>
+  <marker>
+    <marker_id>71</marker_id>
+    <map_id>1</map_id>
+    <title>Chattanooga Times Free Press</title>
+    <address>400 East 11th St. Chattanooga, TN 37403</address>
+    <desc></desc>
+    <pic>http://sherpadesk.com/sd/wp-content/uploads/2014/03/Casey-Thomas.jpg</pic>
+    <icon>http://sherpadesk.com/wp-content/uploads/2014/08/error-background.png</icon>
+    <linkd>http://www.Timesfreepress.com </linkd>
+    <lat>35.041822</lat>
+    <lng>-85.30462</lng>
+    <anim>2</anim>
+    <retina>0</retina>
+    <category>0</category>
+    <infoopen>0</infoopen>
+  </marker>
+  <marker>
+    <marker_id>81</marker_id>
+    <map_id>1</map_id>
+    <title>BulletProof Systems</title>
+    <address>San Clemente, United States</address>
+    <desc></desc>
+    <pic></pic>
+    <icon>http://sherpadesk.com/wp-content/uploads/2014/08/error-background.png</icon>
+    <linkd></linkd>
+    <lat>33.4269728</lat>
+    <lng>-117.61199249999999</lng>
+    <anim>2</anim>
+    <retina>0</retina>
+    <category>0</category>
+    <infoopen>0</infoopen>
+  </marker>
+  <marker>
+    <marker_id>91</marker_id>
+    <map_id>1</map_id>
+    <title>RBA Professional Data Systems</title>
+    <address>Lewistown, United States</address>
+    <desc></desc>
+    <pic></pic>
+    <icon>http://sherpadesk.com/wp-content/uploads/2014/08/error-background.png</icon>
+    <linkd></linkd>
+    <lat>40.5992395</lat>
+    <lng>-77.57138199999997</lng>
+    <anim>2</anim>
+    <retina>0</retina>
+    <category>0</category>
+    <infoopen>0</infoopen>
+  </marker>
+  <marker>
+    <marker_id>101</marker_id>
+    <map_id>1</map_id>
+    <title>Union County Schools</title>
+    <address>Los Angeles, United States</address>
+    <desc></desc>
+    <pic></pic>
+    <icon>http://sherpadesk.com/wp-content/uploads/2014/08/error-background.png</icon>
+    <linkd></linkd>
+    <lat>34.0522342</lat>
+    <lng>-118.2436849</lng>
+    <anim>2</anim>
+    <retina>0</retina>
+    <category>0</category>
+    <infoopen>0</infoopen>
+  </marker>
+  <marker>
+    <marker_id>111</marker_id>
+    <map_id>1</map_id>
+    <title>United Imaging</title>
+    <address>Canoga Park, United States</address>
+    <desc></desc>
+    <pic></pic>
+    <icon>http://sherpadesk.com/wp-content/uploads/2014/08/error-background.png</icon>
+    <linkd></linkd>
+    <lat>34.208254</lat>
+    <lng>-118.60586089999998</lng>
+    <anim>2</anim>
+    <retina>0</retina>
+    <category>0</category>
+    <infoopen>0</infoopen>
+  </marker>
+  <marker>
+    <marker_id>121</marker_id>
+    <map_id>1</map_id>
+    <title>Upper Iowa University </title>
+    <address>Los Angeles, United States</address>
+    <desc></desc>
+    <pic></pic>
+    <icon>http://sherpadesk.com/wp-content/uploads/2014/08/error-background.png</icon>
+    <linkd></linkd>
+    <lat>34.0522342</lat>
+    <lng>-118.2436849</lng>
+    <anim>2</anim>
+    <retina>0</retina>
+    <category>0</category>
+    <infoopen>0</infoopen>
+  </marker>
+  <marker>
+    <marker_id>131</marker_id>
+    <map_id>1</map_id>
+    <title>MEA Financial Enterprises, LLC</title>
+    <address>Joplin, United States</address>
+    <desc></desc>
+    <pic></pic>
+    <icon>http://sherpadesk.com/wp-content/uploads/2014/08/error-background.png</icon>
+    <linkd></linkd>
+    <lat>37.08422710000001</lat>
+    <lng>-94.513281</lng>
+    <anim>2</anim>
+    <retina>0</retina>
+    <category>0</category>
+    <infoopen>0</infoopen>
+  </marker>
+  <marker>
+    <marker_id>141</marker_id>
+    <map_id>1</map_id>
+    <title>RTT Help</title>
+    <address>Fort Lauderdale, United States</address>
+    <desc></desc>
+    <pic></pic>
+    <icon>http://sherpadesk.com/wp-content/uploads/2014/08/error-background.png</icon>
+    <linkd></linkd>
+    <lat>26.1224386</lat>
+    <lng>-80.13731740000003</lng>
+    <anim>2</anim>
+    <retina>0</retina>
+    <category>0</category>
+    <infoopen>0</infoopen>
+  </marker>
+  <marker>
+    <marker_id>151</marker_id>
+    <map_id>1</map_id>
+    <title>Amcom 360</title>
+    <address>San Antonio, United States</address>
+    <desc></desc>
+    <pic></pic>
+    <icon>http://sherpadesk.com/wp-content/uploads/2014/08/error-background.png</icon>
+    <linkd></linkd>
+    <lat>29.4241219</lat>
+    <lng>-98.49362819999999</lng>
+    <anim>2</anim>
+    <retina>0</retina>
+    <category>0</category>
+    <infoopen>0</infoopen>
+  </marker>
+  <marker>
+    <marker_id>161</marker_id>
+    <map_id>1</map_id>
+    <title>HOTSPOT INTERNATIONAL</title>
+    <address>Mexico, Mexico</address>
+    <desc></desc>
+    <pic></pic>
+    <icon>http://sherpadesk.com/wp-content/uploads/2014/08/error-background.png</icon>
+    <linkd></linkd>
+    <lat>19.4326077</lat>
+    <lng>-99.13320799999997</lng>
+    <anim>2</anim>
+    <retina>0</retina>
+    <category>0</category>
+    <infoopen>0</infoopen>
+  </marker>
+  <marker>
+    <marker_id>171</marker_id>
+    <map_id>1</map_id>
+    <title>Global Educators</title>
+    <address>Amherst, United States</address>
+    <desc></desc>
+    <pic></pic>
+    <icon>http://sherpadesk.com/wp-content/uploads/2014/08/error-background.png</icon>
+    <linkd></linkd>
+    <lat>42.366667</lat>
+    <lng>-72.51666699999998</lng>
+    <anim>2</anim>
+    <retina>0</retina>
+    <category>0</category>
+    <infoopen>0</infoopen>
+  </marker>
+</markers>
