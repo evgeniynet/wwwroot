@@ -12,6 +12,7 @@ angular.module('app', ['ui.bootstrap'])
     .run(function ($rootScope, $timeout) {
         $rootScope.globalAlerts = [];
         $rootScope.addAlert = function (alert) {
+            $rootScope.globalAlerts = [];
             $rootScope.globalAlerts.push(alert);
         };
         $rootScope.clearAlerts = function () {
@@ -163,7 +164,7 @@ angular.module('app', ['ui.bootstrap'])
 
         $scope.$watch('signUp.companyName', function(newVar, oldVar){
             if(newVar){
-                var url = newVar.toString().toLowerCase().replace(/\s+/g, '');
+                var url = newVar.toString().toLowerCase().replace(/[^a-zA-Z0-9-]/g, '');
                 $scope.signUp.pUrl = document.getElementById("customurl").innerText = url;
             }
         });
@@ -171,7 +172,7 @@ angular.module('app', ['ui.bootstrap'])
     $scope.$watch('signUp.pUrl', function(newVar, oldVar){
         if(newVar)
         {
-            var url = newVar.toString().toLowerCase().replace(/\s+/g, '');
+            var url = newVar.toString().toLowerCase().replace(/[^a-zA-Z0-9-]/g, '');
             document.getElementById("customurl").innerText = url; 
             var isUrlExists = true;
             if (url.length > 2){
@@ -188,7 +189,7 @@ angular.module('app', ['ui.bootstrap'])
                     $scope.formLoading = false;
                     var data = results.data;
                     isUrlExists = data.isUrlExists;
-                    if(!isUrlExists && /^[0-9a-z][0-9a-z-]{1,18}[0-9a-z]$/i.test(url)){
+                    if(!isUrlExists && url.length < 19){
                         //$scope.message('danger', 'URL is already in use.');
                         $scope.step1.url.$error = false;
                         $scope.step1.url.badUrl = false;
@@ -235,7 +236,7 @@ angular.module('app', ['ui.bootstrap'])
         $scope.completeForm = function(){
             $scope.formLoading = true;
             var notes = localStorage.note;
-            notes = notes ? ("Note: " + notes) : ""; 
+            notes = notes ? (" Note: " + notes) : ""; 
             var data = {
                 "name": $scope.signUp.companyName,
                 "email":$scope.signUp.email,
@@ -246,7 +247,7 @@ angular.module('app', ['ui.bootstrap'])
                 "lastname":$scope.signUp.lastName,
                 "password":$scope.signUp.password,
                 "password_confirm": $scope.signUp.password2,
-                "how_did_you_hear_about_us": $scope.signUp.hearAboutUs,
+                "how": $scope.signUp.hearAboutUs || Cookies.get('how'),
                 "note": "Number of Techs: " + $scope.signUp.numberOfTechs.count + " : by it_customer_support" + notes
             };
             var submitForm = $http.post(apiUrl + 'organizations?format=json', data);
@@ -285,11 +286,11 @@ angular.module('app', ['ui.bootstrap'])
                 ngModel.$validators.passwordCharacters = function(value) {
                     if (value.trim().length < 5)
                         return false;
-                    var status = /^\d+$/.test(value);
+                    //var status = /^\d+$/.test(value);
                     //angular.forEach(REQUIRED_PATTERNS, function(pattern) {
                     //    status = status && pattern.test(value);
                     //});
-                    return !status;
+                    return true;
                 };
             }
         }
