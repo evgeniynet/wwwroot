@@ -247,7 +247,7 @@ angular.module('app', ['ui.bootstrap'])
                 "password":$scope.signUp.password,
                 "password_confirm": $scope.signUp.password2,
                 "how_did_you_hear_about_us": $scope.signUp.hearAboutUs,
-                "note": "Number of Techs: " + $scope.signUp.numberOfTechs.count + " : by it_customer_support" + note
+                "note": "Number of Techs: " + $scope.signUp.numberOfTechs.count + " : by it_customer_support" + notes
             };
             var submitForm = $http.post(apiUrl + 'organizations?format=json', data);
             submitForm.then(
