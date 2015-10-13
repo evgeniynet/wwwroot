@@ -389,7 +389,7 @@ var data = {
 "lastname":$scope.signUp.lastName,
 "password":$scope.signUp.password,
 "password_confirm": $scope.signUp.password2,
-"how_did_you_hear_about_us": $scope.signUp.hearAboutUs.about,
+"how": $scope.signUp.hearAboutUs.about,
 "note": "Number of Techs: " + $scope.signUp.numberOfTechs.count
 };
 var submitForm = $http.post(apiUrl + 'organizations?format=json', data);
