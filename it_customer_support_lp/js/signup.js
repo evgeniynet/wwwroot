@@ -247,8 +247,8 @@ angular.module('app', ['ui.bootstrap'])
                 "lastname":".",
                 "password":$scope.signUp.password,
                 "password_confirm": $scope.signUp.password2,
-                "how": $scope.signUp.hearAboutUs || Cookies.get('how'),
-                "note": "Number of Techs: " + $scope.signUp.numberOfTechs.count + " : by it_customer_support" + notes
+                "how": Cookies.get('how'),
+                "note": "by it_customer_support_lp: " + notes
             };
             var submitForm = $http.post(apiUrl + 'organizations?format=json', data);
             submitForm.then(
@@ -295,6 +295,18 @@ angular.module('app', ['ui.bootstrap'])
             }
         }
     });
+
+window.onload = function () {
+    var how = getParameterByName("how") || Cookies.get('how');
+    var note = getParameterByName("note");
+    if (note) 
+        localStorage.note = note;
+    if (how)
+    {
+        cleanQuerystring();
+        Cookies.set('how', how, { expires: 30 });
+    }
+}
 
 //Cookie support
 
