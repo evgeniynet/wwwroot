@@ -85,11 +85,6 @@ var google_remarketing_only = true;
                                         <input type="text" class="form-control input-lg" id="url" name="url" ng-model="signUp.pUrl">
                                         <p class="help-block">https://<strong id=customurl>yourcompanyname</strong>.sherpadesk.com</p>
                                     </div>
-                                    <div class="form-group" ng-class="{'has-error': step2.firstName.$dirty}">
-                                        <label class="control-label">Name (optional)
-                                        </label>
-                                        <input type="text" id="first-name" class="form-control input-lg" name="firstName" ng-model="signUp.firstName">
-                                    </div>
 									<div style="display:none;" class="form-group" ng-class="{'has-error': step2.lastName.$dirty}">
                                         <label class="control-label">Last Name (optional)
                                         </label>
