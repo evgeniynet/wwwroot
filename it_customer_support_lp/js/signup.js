@@ -241,13 +241,13 @@ angular.module('app', ['ui.bootstrap'])
                 "name": $scope.signUp.companyName,
                 "email":$scope.signUp.email,
                 "url":$scope.signUp.pUrl,
-                "is_force_registration": false,
+                "is_force_registration": true,
                 "is_force_redirect": true,
                 "firstname": $scope.signUp.firstName,
                 "lastname":".",
                 "password":$scope.signUp.password,
                 "password_confirm": $scope.signUp.password2,
-                "how": Cookies.get('how'),
+                "how": Cookies.get('how') || "",
                 "note": "by it_customer_support_lp: " + notes
             };
             var submitForm = $http.post(apiUrl + 'organizations?format=json', data);

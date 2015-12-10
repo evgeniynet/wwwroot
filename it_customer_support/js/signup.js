@@ -96,7 +96,7 @@ angular.module('app', ['ui.bootstrap'])
             //check valid for next
             if($scope.step1.company.$valid
                 && $scope.step1.email.$valid
-                && $scope.step1.url.$valid)
+               && (!$scope.signUp.pUrl.length || $scope.step1.url.$valid))
             {
                 var CheckURL = $http.post(apiUrl + 'validate_organization', data);
                 CheckURL.then(
@@ -104,19 +104,15 @@ angular.module('app', ['ui.bootstrap'])
                        //console.log(results)
                         $scope.formLoading = false;
                        var data = results.data;
-                       if(data.isNameExists){
-                           $scope.message('warning', 'FYI. Company name is already in use.');
-                           //return false;
-                       }
                        //console.log($scope.signUp.force);
                        if(data.isEmailExists && !$scope.signUp.force){
                            $scope.message('warning', 'Email "'+$scope.signUp.email+'" is already in use. Click submit to proceed to create a new account OR <a style="color:black" href="https://app.sherpadesk.com/login/">click HERE</a> to login');
                            $scope.signUp.force = true;
+                           document.getElementById("btn1").innerHTML = "Proceed To Create Account";
                            return false;
                        }
                        if(data.isUrlExists){
-                           $scope.message('danger', 'URL is already in use or incorrect.');
-                           return false;
+                           $scope.signUp.pUrl = "";
                        }
                
                        $scope.formLoading = true;
@@ -142,6 +138,7 @@ angular.module('app', ['ui.bootstrap'])
                             $timeout(function(){
                                 $scope.formLoading = false;
                                 $scope.signUp.stepOneComplete = true;
+                                document.getElementById("btn1").innerHTML = "Get Started For Free";
                             }, 1000);
                        $timeout(function(){
                            document.getElementById("first-name").focus();
@@ -158,7 +155,7 @@ angular.module('app', ['ui.bootstrap'])
                );
             } else {
                 $scope.formLoading = false;
-                $scope.message('danger', "All fields are required. Please correct errors");
+                $scope.message('danger', "Name and Email fields are required. Please correct errors");
             }
         };
 
@@ -168,14 +165,15 @@ angular.module('app', ['ui.bootstrap'])
                 $scope.signUp.pUrl = document.getElementById("customurl").innerText = url;
             }
         });
+        
     
     $scope.$watch('signUp.pUrl', function(newVar, oldVar){
         if(newVar)
         {
             var url = newVar.toString().toLowerCase().replace(/[^a-zA-Z0-9-]/g, '');
             document.getElementById("customurl").innerText = url; 
-            var isUrlExists = true;
-            if (url.length > 2){
+            var isUrlExists = false;
+            if (url.length > 1){
             var data = {
                 "name": $scope.signUp.companyName,
                 "email":$scope.signUp.email,
@@ -209,15 +207,21 @@ angular.module('app', ['ui.bootstrap'])
                 }
             );
             }
-            else{
-                //$scope.message('danger', 'URL is already in use.');
-                $scope.step1.url.$error = true;
-                $scope.step1.url.$valid = false;
-                $scope.step1.url.badUrl = true;
-                $scope.step1.url.goodUrl = false;
-                return false;
+        }
+        else
+        {
+            $scope.signUp.pUrl = "";
+            var ur = document.getElementById("customurl");
+            if (ur)
+            {
+            ur.innerText = "yourcompanyname";
+            $scope.step1.url.$error = false;
+            $scope.step1.url.$valid = true;
+            $scope.step1.url.badUrl = false;
+            $scope.step1.url.goodUrl = false;
             }
         }
+        return !isUrlExists;
     });
 
 
@@ -230,7 +234,7 @@ angular.module('app', ['ui.bootstrap'])
         $scope.signUp.stepOneComplete = false;
         $timeout(function(){
             document.getElementById("customurl").innerText = document.getElementById("url").value;
-        }, 200);
+        }, 500);
     };
 
         $scope.completeForm = function(){
@@ -241,19 +245,20 @@ angular.module('app', ['ui.bootstrap'])
                 "name": $scope.signUp.companyName,
                 "email":$scope.signUp.email,
                 "url":$scope.signUp.pUrl,
-                "is_force_registration": false,
+                "is_force_registration": true,
                 "is_force_redirect": true,
                 "firstname": $scope.signUp.firstName,
                 "lastname":$scope.signUp.lastName,
                 "password":$scope.signUp.password,
                 "password_confirm": $scope.signUp.password2,
-                "how": $scope.signUp.hearAboutUs || Cookies.get('how'),
+                "how": $scope.signUp.hearAboutUs || Cookies.get('how') || "",
                 "note": "Number of Techs: " + $scope.signUp.numberOfTechs.count + " : by it_customer_support" + notes
             };
             var submitForm = $http.post(apiUrl + 'organizations?format=json', data);
             submitForm.then(
                 function(results){
                     localStorage.note = "";
+                    console.log(results.data);
                     window.location = results.data.url;
                 },
                 function(results){
@@ -284,7 +289,7 @@ angular.module('app', ['ui.bootstrap'])
             require : 'ngModel',
             link : function($scope, element, attrs, ngModel) {
                 ngModel.$validators.passwordCharacters = function(value) {
-                    if (value.trim().length < 5)
+                    if (value.trim().length > 1 && value.trim().length < 5)
                         return false;
                     //var status = /^\d+$/.test(value);
                     //angular.forEach(REQUIRED_PATTERNS, function(pattern) {

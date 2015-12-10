@@ -72,39 +72,39 @@ var google_remarketing_only = true;
                                         </label>
                                         <input type="email" class="form-control input-lg" id="email1" name="email" ng-model="signUp.email" required>
                                     </div>
-                                    <div class="form-group" ng-class="{'has-error': step1.url.$error && step1.url.$dirty, 'has-success': step2.url.goodUrl && step2.url.$dirty}">
-                                        <label class="control-label" for="url">Custom Url*
-                                            <span class="has-error" ng-show="step2.url.$error.required && step2.url.$dirty">Required! </span>
-                                            <span class="has-error" style="color:red" ng-show="step2.url.badUrl">This Url is already in use or incorrect</span>
-                                            <span class="has-success" style="color:#43ac6a" ng-show="step2.url.goodUrl">Url is OK</span>
-                                        </label>
-                                        <input type="text" class="form-control input-lg" id="url" name="url" ng-model="signUp.pUrl" required>
-                                        <p class="help-block">https://<strong id=customurl>yourcompanyname</strong>.sherpadesk.com</p>
-                                    </div>
                                     <div class="form-group" ng-class="{'has-error': step2.firstName.$error.required && step2.firstName.$dirty}">
-                                        <label class="control-label">Name*
-                                            <span class="has-error" ng-show="step2.firstName.$error.required && step2.firstName.$dirty">Required!</span>
+                                        <label class="control-label">Your Name*
                                         </label>
                                         <input type="text" id="first-name" class="form-control input-lg" name="firstName" ng-model="signUp.firstName" required>
                                     </div>
-									<div style="display:none;" class="form-group" ng-class="{'has-error': step2.lastName.$error.required && step2.lastName.$dirty}">
-                                        <label class="control-label">Last Name*
-                                            <span class="has-error" ng-show="step2.lastName.$error.required && step2.lastName.$dirty">Required!</span>
+                                    <div class="form-group" ng-class="{'has-error': step1.url.$error && step1.url.$dirty, 'has-success': step2.url.goodUrl && step2.url.$dirty}">
+                                        <label class="control-label" for="url">Custom Url (optional)
+                                            <span class="has-error" style="color:red" ng-show="step2.url.badUrl">This Url is already in use or incorrect</span>
+                                            <span class="has-success" style="color:#43ac6a" ng-show="step2.url.goodUrl">Url is OK</span>
+                                        </label>
+                                        <input type="text" class="form-control input-lg" id="url" name="url" ng-model="signUp.pUrl">
+                                        <p class="help-block">https://<strong id=customurl>yourcompanyname</strong>.sherpadesk.com</p>
+                                    </div>
+                                    <div class="form-group" ng-class="{'has-error': step2.firstName.$dirty}">
+                                        <label class="control-label">Name (optional)
+                                        </label>
+                                        <input type="text" id="first-name" class="form-control input-lg" name="firstName" ng-model="signUp.firstName">
+                                    </div>
+									<div style="display:none;" class="form-group" ng-class="{'has-error': step2.lastName.$dirty}">
+                                        <label class="control-label">Last Name (optional)
                                         </label>
                                         <input type="text" class="form-control input-lg" name="lastName" value=".">
                                     </div>                                    
-                                    <div class="form-group" ng-class="{'has-error': step2.password.$error.required && step2.password.$dirty}">
-                                        <label class="control-label" for="url">Password*
-                                            <span class="has-error" ng-show="step2.password.$error.required && step2.password.$dirty">Required!</span>
+                                    <div class="form-group" ng-class="{'has-error': step2.password.$dirty}">
+                                        <label class="control-label" for="url">Password (optional)
                                         </label>
-                                        <input type="password" class="form-control input-lg" name="password" ng-model="signUp.password" required>
+                                        <input type="password" class="form-control input-lg" name="password" ng-model="signUp.password">
                                     </div>
                                     <div class="form-group" ng-class="{'has-error': validatePassword() && step2.password2.$dirty}">
-                                        <label class="control-label" for="url">Confirm Password*
-                                            <span class="has-error" ng-show="step2.password2.$error.required && step2.password2.$dirty">Required!</span>
+                                        <label class="control-label" for="url">Confirm Password (optional)
                                             <span class="has-error" ng-show="validatePassword() && step2.password2.$dirty">Passwords must match!</span>
                                         </label>
-                                        <input type="password" class="form-control input-lg" name="password2" ng-model="signUp.password2" required>
+                                        <input type="password" class="form-control input-lg" name="password2" ng-model="signUp.password2">
                                     </div>
 									<center>
  
