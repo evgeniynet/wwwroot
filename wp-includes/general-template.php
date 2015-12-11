@@ -32,6 +32,11 @@ function get_header( $name = null ) {
 	 *
 	 * @param string $name Name of the specific header file to use.
 	 */
+    
+    if (isset($_GET['how'])) {
+        setcookie( "how", $_GET['how'], strtotime( '+90 days' ) );
+    }
+    
 	do_action( 'get_header', $name );
 
 	$templates = array();
