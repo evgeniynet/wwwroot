@@ -113,7 +113,7 @@ var google_remarketing_only = true;
                                 100% privacy guarantee. No Credit Card Required.
                             </p>
                             <p class="text-center text-muted small" style="padding-top: 10px;">
-                                By clicking the button above I agree to<br/> <a target="_blank" href="http://sherpadesk.com/privacy-policy/">Terms of Use</a> and <a target="_blank" href="http://sherpadesk.com/privacy-policy/">Privacy Policy</a>.
+                                By clicking the button above I agree to<br/> <a href="http://www.sherpadesk.com/terms-of-service/" target="_blank">Terms Of Service</a> and <a target="_blank" href="http://sherpadesk.com/privacy-policy/">Privacy Policy</a>.
                             </p>
                         </div>
                     </div>
