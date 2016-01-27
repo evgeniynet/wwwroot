@@ -41,14 +41,14 @@
                             <img class="arrow" src="img/arrow.png">
                             <div class="form-header">
                                 <p>Turn customer support emails into tickets in just a few minutes.
-                                <h3>Start Free Trial Now!</h3>
+                                <h3>Create A Free Account Now!</h3>
                             </div>
                             <form name="step1" ng-submit="goNextStep(step1.$valid)" novalidate>
                                 <div ng-if="!signUp.stepOneComplete">
-                                    <p style="margin: 20px 0;">Sign up today and make sure <strong>nothing slips through the cracks again.</strong></p>
-                                    <div class="form-header9">
+                                    <p style="margin: 20px 0;">Sign up today and get full access to SherpaDesk for one user, <strong>absolutely free.</strong></p>
+                                    <!--div class="form-header9">
                                         <h6 style="font-size: 18px;margin-top: 6px;margin-bottom: 6px;" >Step 1</h6>
-                                    </div>
+                                    </div-->
                                     <div class="form-group" ng-class="{'has-error': step1.company.$error.required && step1.company.$dirty}">
                                         <label class="control-label" for="company">Company Name*
                                             <span class="has-error" ng-show="step1.company.$error.required && step1.company.$dirty">Required!</span>
@@ -71,7 +71,7 @@
                                     </div>
                                     <br/>
                                     <input type="hidden" class="form-control input-lg" id="force" name="force" ng-model="signUp.force">
-                                    <button id="btn1" class="btn btn-success btn-lg btn-block sd-btn-lg" type="submit">Get Started For Free</button>
+                                    <button id="btn1" class="btn btn-success btn-lg btn-block sd-btn-lg" type="submit">Start My Account</button>
                                 </div>
                             </form>
                             <form name="step2"  ng-submit="completeForm(step2.$valid)" novalidate ng-cloak>
@@ -119,7 +119,7 @@
                                     </select>
                                     <br/>
 
-                                    <button class="btn btn-success btn-lg sd-btn-lg" style="width:70%">Start Free Trial Now</button> 
+                                    <button class="btn btn-success btn-lg sd-btn-lg" style="width:70%">Start My Account</button> 
                                     <button class="btn btn-default btn-lg sd-btn-lg" style="width:25%;margin-left: 10px;float: right;"  type="button" ng-click="cancelForm()">Back</button>
 
                                 </div>

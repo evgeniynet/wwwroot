@@ -138,7 +138,7 @@ angular.module('app', ['ui.bootstrap'])
                             $timeout(function(){
                                 $scope.formLoading = false;
                                 $scope.signUp.stepOneComplete = true;
-                                document.getElementById("btn1").innerHTML = "Get Started For Free";
+                                document.getElementById("btn1").innerHTML = "Start My Account";
                             }, 1000);
                        $timeout(function(){
                            document.getElementById("first-name").focus();

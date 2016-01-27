@@ -56,7 +56,7 @@ var google_remarketing_only = true;
                             <img class="arrow" src="img/arrow.png">
                             <div class="form-header">
                                 <p>Turn customer support emails into tickets in just a few minutes.
-                                <h3>Sign Up For Free Trial!</h3>
+                                <h3>Create A Free Account Now!</h3>
                             </div>
                             <form name="step2"  ng-submit="completeForm(step2.$valid)" novalidate ng-cloak>
                                 <div ng-if="!signUp.stepOneComplete"><br />
@@ -103,7 +103,7 @@ var google_remarketing_only = true;
                                     </div>
 									<center>
  
-                                    <button class="btn btn-success btn-lg sd-btn-lg" onClick="ga('send', 'event', { eventCategory: 'Registration', eventAction: 'Click Submit', eventLabel: 'Sign Up'});" style="width:70%">Start Free Trial Now</button>                                     
+                                    <button class="btn btn-success btn-lg sd-btn-lg" onClick="ga('send', 'event', { eventCategory: 'Registration', eventAction: 'Click Submit', eventLabel: 'Sign Up'});" style="width:100% !important">Start My Account</button>                                     
 									</center>
 
                                 </div>
