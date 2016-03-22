@@ -320,7 +320,8 @@ get_header(); ?>
             submitForm.then(
                 function(results){
                     localStorage.note = "";
-                    getappTrackConversion($scope.signUp.pUrl);
+                    try {
+                    getappTrackConversion($scope.signUp.companyName + " from " + $scope.signUp.email + " on " + (new Date).toLocaleDateString());
                     var SWPX = SWPX || {};
                     SWPX.cmd = SWPX.cmd || [];
                     SWPX.cmd.push(function() {
@@ -329,6 +330,10 @@ get_header(); ?>
                         SWPX.pixel.setIdentifier('121806');
                         SWPX.pixel.fire();
                     });
+                    }
+                    catch(err) {
+                        console.log(err);
+                    }
                     window.location = results.data.url;
                 },
                 function(results){
