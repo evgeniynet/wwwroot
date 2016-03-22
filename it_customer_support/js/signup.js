@@ -254,6 +254,7 @@ angular.module('app', ['ui.bootstrap'])
                 "how": $scope.signUp.hearAboutUs || Cookies.get('how') || "",
                 "note": "Number of Techs: " + $scope.signUp.numberOfTechs.count + " : by it_customer_support" + notes
             };
+            if (!getParameterByName('test')){
             var submitForm = $http.post(apiUrl + 'organizations?format=json', data);
             submitForm.then(
                 function(results){
@@ -273,6 +274,15 @@ angular.module('app', ['ui.bootstrap'])
                         $scope.signUp.stepOneComplete = false;
                     $scope.formLoading = false;
                 });
+            }
+            else
+            {
+                cleanQuerystring();
+                var el2 =  document.createElement("span")
+                el2.innerHTML = "test passed";
+                document.body.appendChild(el2);
+                $scope.formLoading = false;
+            }
         };
 
     })

@@ -90,7 +90,7 @@ var google_remarketing_only = true;
                                         </label>
                                         <input type="text" class="form-control input-lg" name="lastName" value=".">
                                     </div>                                    
-                                    <div class="form-group" ng-class="{'has-error': step2.password.$dirty}">
+                                    <div class="form-group" ng-class="{'has-error': validatePassword() && step2.password.$dirty}">
                                         <label class="control-label" for="url">Password (optional)
                                         </label>
                                         <input type="password" class="form-control input-lg" name="password" ng-model="signUp.password">
@@ -192,6 +192,22 @@ var google_remarketing_only = true;
         <style type="text/css">
         datalist {display:none;} /* just in case */
     </style>
+    
+    <script>
+        var SWPX = SWPX || {};
+        SWPX.cmd = SWPX.cmd || [];
+        SWPX.cmd.push(function() {
+            SWPX.pixel.setPixel('mvc7');
+            // Uncomment the following line to place an identifer
+            SWPX.pixel.setIdentifier('121806');
+            SWPX.pixel.fire();
+        });
+    </script>
+    <script src="//px.spiceworks.com/px.js" async></script>
+
+    <noscript>
+        <img src="//px.spiceworks.com/px/mvc7" height="1" width="1">
+    </noscript>
 
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
