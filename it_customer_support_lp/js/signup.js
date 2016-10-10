@@ -189,17 +189,21 @@ angular.module('app', ['ui.bootstrap'])
                     $scope.formLoading = false;
                     var data = results.data;
                     isUrlExists = data.isUrlExists;
-                    if(!isUrlExists && url.length < 19){
+                    if(!isUrlExists && url.length < 21){
                         //$scope.message('danger', 'URL is already in use.');
                         $scope.step2.url.$error = false;
                         $scope.step2.url.badUrl = false;
+                        $scope.step2.url.longUrl = false;
                         $scope.step2.url.$valid = true;
                         $scope.step2.url.goodUrl = true;
                         return false;
                     }
                     $scope.step2.url.$error = true;
                     $scope.step2.url.$valid = false;
-                    $scope.step2.url.badUrl = true;
+                    if (url.length < 3 || url.length > 20)
+                        $scope.step2.url.longUrl = true;
+                    else 
+                        $scope.step2.url.badUrl = true;
                     $scope.step2.url.goodUrl = false;
                 },
                 function(results){
@@ -213,7 +217,7 @@ angular.module('app', ['ui.bootstrap'])
                 //$scope.message('danger', 'URL is already in use.');
                 $scope.step2.url.$error = true;
                 $scope.step2.url.$valid = false;
-                $scope.step2.url.badUrl = true;
+                $scope.step2.url.longUrl = true;
                 $scope.step2.url.goodUrl = false;
                 return false;
             }
