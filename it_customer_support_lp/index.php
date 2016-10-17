@@ -79,7 +79,8 @@ var google_remarketing_only = true;
                                     </div>
                                     <div class="form-group" ng-class="{'has-error': step1.url.$error && step1.url.$dirty, 'has-success': step2.url.goodUrl && step2.url.$dirty}">
                                         <label class="control-label" for="url">Custom Url (optional)
-                                            <span class="has-error" style="color:red" ng-show="step2.url.badUrl">This Url is already in use or incorrect</span>
+                                            <span class="has-error" style="color:red" ng-show="step2.url.badUrl">This Url is already in use</span>
+                                            <span class="has-error" style="color:red" ng-show="step2.url.longUrl">This Url is incorrect. Please enter between 3 and 20 characters</span>
                                             <span class="has-success" style="color:#43ac6a" ng-show="step2.url.goodUrl">Url is OK</span>
                                         </label>
                                         <input type="text" class="form-control input-lg" id="url" name="url" ng-model="signUp.pUrl">

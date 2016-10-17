@@ -187,17 +187,21 @@ angular.module('app', ['ui.bootstrap'])
                     $scope.formLoading = false;
                     var data = results.data;
                     isUrlExists = data.isUrlExists;
-                    if(!isUrlExists && url.length < 19){
+                    if(!isUrlExists && url.length < 21){
                         //$scope.message('danger', 'URL is already in use.');
                         $scope.step1.url.$error = false;
                         $scope.step1.url.badUrl = false;
+                        $scope.step1.url.longUrl = false;
                         $scope.step1.url.$valid = true;
                         $scope.step1.url.goodUrl = true;
                         return false;
                     }
                     $scope.step1.url.$error = true;
                     $scope.step1.url.$valid = false;
-                    $scope.step1.url.badUrl = true;
+                    if (url.length < 3 || url.length > 20)
+                        $scope.step1.url.longUrl = true;
+                    else 
+                        $scope.step1.url.badUrl = true;
                     $scope.step1.url.goodUrl = false;
                 },
                 function(results){
@@ -217,7 +221,7 @@ angular.module('app', ['ui.bootstrap'])
             ur.innerText = "yourcompanyname";
             $scope.step1.url.$error = false;
             $scope.step1.url.$valid = true;
-            $scope.step1.url.badUrl = false;
+            $scope.step1.url.longUrl = false;
             $scope.step1.url.goodUrl = false;
             }
         }
