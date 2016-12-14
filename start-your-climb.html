@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="//cdn2.hubspot.net/hubfs/2629098/sherpaDesk-logo-final(4).png?t=1481596290135">
     
 
-    <script src="https://static.hsstatic.net/jquery-libs/static-1.1/jquery/jquery-1.7.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript">hsjQuery = window['jQuery']</script>
     <link href="https://static.hsstatic.net/content_shared_assets/static-1.4036/css/public_common.css" rel="stylesheet">
     <meta property="og:description" content="Grow your business and earnings with SherpaDesk business management software. Start Your Climb Now.">
@@ -435,7 +435,7 @@
 
     </div><!--end footer -->
 </div><!--end footer wrapper -->
-
+<iframe hidden name="hubspot-iframe" id="hubspot-iframe"></iframe>
     
 <script type="text/javascript" src="https://static.hsstatic.net/content_shared_assets/static-1.4036/js/public_common.js"></script>
 
@@ -446,6 +446,39 @@
 <script src="https://js.hsforms.net/forms/v2.js"></script>
 
     <script>
+
+    var $company, $custom_url, $name, $url, $email, $password, $confirm_password, $submit;
+
+        function seterror(element, text, isclear)
+        {
+            element[0].validationMessage = isclear ? "": "Incorrect";
+            (element.next("ul") || {}).remove();
+            if (!isclear){
+            element[0].classList.add("error");
+            element[0].classList.add("invalid");
+            if (text)
+            element.after('<ul class="hs-error-msgs inputs-list hs-error-msgs1" style="display:block;"><li><label>'+text+'</label></li></ul>');
+            }   
+            else
+            {
+            element[0].classList.remove("error");
+            element[0].classList.remove("invalid");
+            }
+            $submit.attr("disabled", isclear && !$("ul.hs-error-msgs1").length ? false : true);
+        }
+
+        function init_vars($form)
+        {
+        $company = $form.find( "input[name='company']" );
+        $name = $form.find( "input[name='name']" );
+        $custom_url = $form.find( "input[name='custom_url']" );
+        $url = $form.find("strong:contains('yourcompanyname')");
+        $email = $form.find( "input[name='email']" );
+        $password = $form.find( "input[name='password']" );
+        $confirm_password = $form.find( "input[name='confirm_password']" );
+        $submit = $form.find( "input[type='submit']" );
+        }
+
         hbspt.forms.create({
             portalId: '2629098',
             formId: '5c0b2305-776b-4492-b91d-80d92fa33688',
@@ -475,7 +508,144 @@
             
             formData: {
             cssClass: 'hs-form stacked hs-custom-form'
+            },
+            onFormReady: function($form) {
+        $form.attr('target', 'hubspot-iframe');
+        init_vars($form);
+
+        $password.attr("type", "password");
+        $confirm_password.attr("type", "password");
+
+        function safechar(text)
+        {
+            return (text || "").toLowerCase().replace(/[^a-zA-Z0-9-]/g, '').trim();
+        }
+
+        $company.change(function() {
+            var company = $(this).val();
+            if(company && !$custom_url.val()){
+                var url = safechar(company);
+                $custom_url.val(url).change();
+                $url[0].innerText = url; 
             }
+        });
+
+        $password.change(function() {
+            var password = $(this).val();
+            if(password){
+              if (password.trim().length < 5){ 
+                seterror($(this), "Password must be not less than 5 chars.");
+                return;
+            }
+            else
+                seterror($password, "", true);
+            if ($confirm_password.val() != password){ 
+                seterror($confirm_password, "Passwords must match.");
+                return;
+            }
+            else
+                seterror($confirm_password, "", true);
+        }
+            seterror($(this), "", true);
+        });
+
+        $confirm_password.change(function() {
+            var password = $password.val();
+            var confirm_password = $confirm_password.val();
+
+            if(password && confirm_password == password){ 
+                seterror($(this), "", true);
+            }
+            else if (confirm_password && password !=confirm_password)
+                seterror($(this), "Passwords must match.");
+        });
+
+        $custom_url.change(function() {
+            var url = safechar($(this).val());
+            if ($(this).val() != url)
+            {
+                $custom_url.val(url).change();
+            }
+            ($url[0] || {}).innerText = url || "yourcompanyname"; 
+            if (url)
+            {
+                if (url.length < 3 || url.length > 20)
+                { 
+                seterror($(this), "This Url is incorrect. Please enter between 3 and 20 characters.");
+                return;
+                }
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', "http://api.sherpadesk.com/validate_organization?format=json&url="+url, true);
+                xhr.onload = function(e) { 
+                    if (e.target.status == 200)
+                    {
+                        var data = JSON.parse(e.target.response);
+                        if (data.isUrlExists)
+                        {
+                            seterror($custom_url, "This Url is already in use");
+                        }
+                        else
+                            seterror($custom_url, "", true);
+                    }
+                    else
+                    {
+                        //alert(e.target.response);
+                        console.log(e);
+                    }
+                }
+                xhr.send();
+            }
+            else
+                seterror($custom_url, "", true);
+            //console.log($(this).val());
+        });
+      },
+    onFormSubmit($form){
+        //console.log('$form', $form); 
+        init_vars($form);
+        seterror($submit, "Redirecting to SherpaDesk app. Please wait...");
+
+
+            var formData = new FormData();
+
+                formData.append("name", $company.val());
+                formData.append("email", $email.val());
+                formData.append("url", $custom_url.val());
+                formData.append("firstname", $name.val());
+                formData.append("lastname", ".");
+                formData.append("password", $password.val());
+                formData.append("password_confirm", $confirm_password.val());
+                formData.append("how", "Hubspot");
+                formData.append("note", "by start your climb page");
+
+                // Append extra data before send.
+                formData.append('is_force_registration', 'true'); 
+                formData.append('is_force_redirect', 'true');
+
+            var xhr = new XMLHttpRequest();
+                xhr.open('POST', "http://api.sherpadesk.com/organizations?format=json", true);
+                xhr.onload = function(e) { 
+                    if (e.target.status == 200 || e.target.status == 201)
+                    {
+                        var data = JSON.parse(e.target.response);
+                        window.location = data.url;
+                    }
+                    else
+                    {
+                        seterror($submit, "Error occured: " + (e.target.response || e.target.status) +". Please contact SherpaDesk administrator (support@sherpadesk.com)");
+                        $custom_url.change();
+                        $password.change();
+                        $confirm_password.change();
+                        //console.log(e);
+                    } 
+                }
+                xhr.onerror = function () {
+                    console.log("** An error occurred during the transaction");
+                    seterror($submit, "Error occured. Please try again later or contact SherpaDesk administrator (support@sherpadesk.com)");
+                };
+                xhr.send(formData);
+                setTimeout(function(){seterror($submit, "", true)}, 6000);
+    }
         });
     </script>
 
